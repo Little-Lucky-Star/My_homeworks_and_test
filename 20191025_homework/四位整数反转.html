@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var num = Number(window.prompt("请输入一个数字(小数将舍弃小数部分):"));
+
+    while (num == NaN || num == Infinity) {
+
+        num = Number(window.prompt("你输入的有误, 重新输入:"));
+    }
+
+    if(parseInt(num) == 0) {
+
+        window.alert("你输入的数太小, 约等于0!");
+
+    } else {
+
+        // var result = 0;
+
+        // var t = 0;
+
+        // var i = 1;
+
+        // while (true) {
+        //     if ((num / i) > 1) {
+        //         t++;
+        //         i *= 10;
+        //         console.log("i = " + i);
+        //     } else {
+        //         break;
+        //     }
+        // }
+
+        // i /= 10;
+
+        // var st = 1;
+
+        // console.log( t );
+
+        // while (t > 0) {
+        //     result += parseInt((num % st) * i);
+        //     num -= i;
+        // console.log("i = ", i);
+        // console.log("num % st", num % st);
+        // console.log("st = ", st);
+
+        //     i /= 10;
+        //     t--;
+        //     // i /= 10;
+        // }
+
+        // console.log(result);
+
+        // console.log("t = " + t);
+    }
+</script>
+</html>

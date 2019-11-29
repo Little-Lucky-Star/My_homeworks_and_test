@@ -1,0 +1,97 @@
+@charset "utf-8";
+
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+.con {
+    margin: auto;
+}
+
+p {
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+}
+
+.green>p, .yellow>p, .red>p, .blue>p {
+    line-height: 100px;
+}
+
+.darkgray>p, .black>p {
+    line-height: 200px;
+}
+
+.yellowgreen>p {
+    line-height: 250px;
+}
+
+.bluesky>p {
+    line-height: 150px;
+}
+
+.con {
+    width: 900px;
+    height: 600px;
+}
+
+.con>div {
+    float: left;
+}
+
+.green, .yellow, .red, .blue {
+    height: 100px;
+}
+
+.yellow, .red {
+    width: 540px;
+}
+
+.darkgray, .black {
+    width: 270px;
+    height: 200px;
+}
+
+.yellowgreen, .bluesky {
+    width: 360px;
+}
+
+.green {
+    background-color: green;
+    width: 180px;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+div.yellowgreen {
+    float: right;
+    background-color: yellowgreen;
+    height: 250px;
+}
+
+.darkgray {
+    background-color: darkgray;
+}
+
+.black {
+    background-color: black;
+}
+
+div.bluesky {
+    float: right;
+    background-color: skyblue;
+    height: 150px;
+}
+
+.red {
+    background-color: red;
+}
+
+.blue {
+    background-color: blue;
+    width: 900px;
+}

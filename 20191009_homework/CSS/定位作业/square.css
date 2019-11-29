@@ -1,0 +1,51 @@
+@charset "utf-8";
+
+.square {
+    height: 340px;
+    width: 340px;
+    border: solid red 2px;
+}
+
+.square>div {
+    height: 100px;
+    width: 100px;
+    background-color: red;
+    position: absolute;
+}
+
+.square>.little-square-1 {
+    left: 20px;
+    top: 20px;
+}
+
+.square>.little-square-2 {
+    right: 20px;
+    top: 20px;
+}
+
+div.square>.little-square-3 {
+    right: 120px;
+    top: 120px;
+    background-color: blue;
+}
+
+.square>.little-square-4 {
+    left: 20px;
+    bottom: 20px;
+}
+
+.square>.little-square-5 {
+    right: 20px;
+    bottom: 20px;
+}
+
+.square p {
+    text-align: center;
+    line-height: 100px;
+    color: white;
+}
+
+.square>.little-square-3>p {
+    color: yellow;
+    font-weight: bold;
+}

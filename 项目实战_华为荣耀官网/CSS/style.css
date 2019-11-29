@@ -1,0 +1,748 @@
+@charset "utf-8";
+
+/* =========================网页内容开始======================== */
+
+/* 网页整体样式 */
+body {
+    background-color: #f6f6f6;
+}
+
+/* 检测当前视口是否在网页头部 */
+.top {
+    height: 30px;
+    width: 30px;
+
+    float: left;
+}
+
+/* 网页主体框架 */
+.container-main {
+    width: 1200px;
+
+    margin: 90px auto 0px;
+}
+
+/* 轮播图样式 */
+.cycle-play-image {
+    height: 600px;
+    width: 100%;
+
+    position: relative;
+}
+
+/* 轮播图内容样式 */
+.cycle-play-image>img {
+    position: absolute;
+
+    transition: opacity 0.5s ease 0s;
+}
+
+.cycle-play-image>img:first-of-type {
+    z-index: 1;
+}
+
+/* 轮播图切换按钮样式 */
+.cycle-play-image>[class|=button] {
+    height: 60px;
+    width: 60px;
+
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.062);
+    z-index: 2;
+}
+
+.cycle-play-image>div>img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.cycle-play-image>.button-left {
+    left: 28px;
+}
+
+.cycle-play-image>.button-right {
+    right: 28px;
+}
+
+/* 轮播图底部切换按钮样式 */
+.cycle-play-image>.bottom-buttons {
+    height: 2px;
+
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 37px;
+
+    z-index: 1;
+}
+
+/* 单个按钮样式 */
+.cycle-play-image>.bottom-buttons>li {
+    height: 2px;
+    width: 50px;
+
+    float: left;
+    margin: 0px 5px;
+
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.295);
+    overflow: hidden;
+}
+
+/* 按钮底色 */
+.cycle-play-image>.bottom-buttons>li>i {
+    display: block;
+    height: 2px;
+    width: 50px;
+    
+    background-color: #00b5e2;
+    
+    position: relative;
+    right: 100%;
+
+    transition: right 3s ease 0s;
+}
+
+/* 按钮被选中时样式 */
+.cycle-play-image>.bottom-buttons>.on {
+    background-color: #01b5e1 !important;
+}
+
+/* 底部雪碧图样式 */
+.cycle-play-image>.bottom-pic {
+    display: block;
+    height: 17px;
+    width: 100%;
+    background: url(../images/skew-mask.png);
+
+    position: absolute;
+    bottom: 0px;
+
+    z-index: 1;
+}
+
+/* 条件筛选产品部分 */
+.search-phone {
+    width: 100%;
+    background-color: #ffffff;
+
+    position: relative;
+}
+
+/* 条件筛选部分标题样式 */
+.search-phone>h1 {
+    display: block;
+
+    padding-top: 50px;
+    padding-bottom: 40px;
+
+    line-height: 40px;
+    font-size: 36px;
+    font-weight: normal;
+    text-align: center;
+}
+
+/* 条件筛选输入框盒子样式 */
+.search-input-box {
+    width: 100%;
+    height: 40px;
+}
+
+/* 条件筛选输入框列表块样式 */
+.search-input-box>ul{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 680px;
+}
+
+/* 条件筛选列表项样式 */
+.search-input-box>ul>li {
+    /* height: 40px;
+    width: 150px;
+    border: solid 1px #a6a6a6;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075); */
+
+    float: left;
+    /* margin: 0px 10px; */
+    padding: 0px 10px;
+    position: relative;
+
+    cursor: pointer;
+}
+
+/* 条件筛选输入框样式 */
+.search-input-box>ul>li>input {
+    height: 40px;
+    width: 150px;
+    
+    outline: none;
+    box-sizing: border-box;
+    border: solid 1px #a6a6a6;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    background-color: rgba(0, 0, 0, 0);
+
+    cursor: pointer;
+}
+
+/* 当条件筛选输入框获取到焦点时,显示下拉列表 */
+.search-input-box>ul>li>input:focus~div {
+    display: block;
+}
+
+/* 输入框内元素遮盖顺序 */
+.search-input-box>ul>li>p {
+    z-index: -1;
+}
+
+/* 输入框内提示文本样式 */
+.search-input-box>ul>li>p:first-of-type {
+    display: block;
+    color: #a6a6a6;
+    line-height: 18px;
+    font-size: 16px;
+
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 20px;
+}
+
+/* 输入框内三角下拉图标样式 */
+.search-input-box>ul>li>p:last-of-type {
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    background: url(../images/三角.png) no-repeat center;
+    background-size: 20px;
+
+    position: absolute;
+    right: 20px;
+
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* 输入框下拉列表块样式 */
+.search-input-box>ul>li>div {
+    width: 148px;
+    border: solid #cccccc 1px;
+    background-color: white;
+
+    position: absolute;
+
+    box-sizing: border-box;
+    border-radius: 4px;
+
+    margin-left: 1px;
+
+    /* 隐藏, 等待被触发 */
+    display: none;
+}
+
+/* 下拉列表框内按钮样式 */
+.search-input-box>ul>li>div>div {
+    height: 33px;
+    font-size: 14px;
+    border-bottom: solid #cccccc 1px;
+
+    box-sizing: border-box;
+}
+
+/* 光标经过下拉列表内按钮时的样式 */
+.search-input-box>ul>li>div>div:hover {
+    background-color: #00b3e0;
+}
+
+/* 光标经过下拉列表内按钮时,按钮内文本的样式 */
+.search-input-box>ul>li>div>div:hover>p {
+    color: white;
+}
+
+/* 按钮内文字样式 */
+.search-input-box>ul>li>div>div>p {
+    line-height: 32px;
+    text-indent: 1em;
+    color: #555555;
+}
+
+/* 价格拖动条和个性筛选按钮样式 */
+.money-search {
+    height: 37px;
+
+    margin: 30px auto 0px;
+}
+
+/* 荣耀20推荐位样式 */
+.recommend {
+    width: 960px;
+
+    margin: 80px auto 0px;
+}
+
+/* 推荐位大图片展示 */
+.recommend>.img {
+    float: left;
+}
+
+/* 推荐位信息说明 */
+.recommend>.info {
+    float: left;
+
+    margin: 100px 0px 0px 50px;
+}
+
+/* 宣传语图片 */
+.recommend>.info>img {
+    display: block;
+}
+
+.recommend>.info>img:first-of-type {
+    height: 35px;
+    margin-bottom: 15px;
+}
+
+.recommend>.info>img:last-of-type {
+    height: 25px;
+    margin-bottom: 20px;
+}
+
+/* 产品细节信息样式 */
+.recommend>.info>.text>p {
+    display: block;
+    font-size: 14px;
+
+    margin-bottom: 15px;
+}
+
+/* 购买链接按钮框样式 */
+.link-button {
+    float: left;
+    margin-top: 50px;
+
+    width: 133px;
+}
+
+/* 按钮本身样式 */
+.link-button>a {
+    display: block;
+    font-size: 16px;
+    color: white;
+    height: 37px;
+    background-color: #e5004f;
+    border-radius: 6px;
+    text-decoration: none;
+
+    line-height: 37px;
+    text-align: center;
+}
+
+/* 底部雪碧图样式 */
+.search-phone>.bottom-pic {
+    display: block;
+    height: 17px;
+    width: 100%;
+    background: url(../images/skew-mask.png);
+    background-position-y: 26px;
+
+    position: absolute;
+    bottom: 0px;
+
+    z-index: 1;
+}
+
+/* 相关推荐部分样式 */
+.related-suggesition {
+    width: 100%;
+
+}
+
+/* 推荐部分标题盒子样式 */
+.related-suggesition>.rel-sug-box {
+    height: 30px;
+    margin: 30px 0px 20px 0px;
+}
+
+/* 相关推荐标题样式 */
+.related-suggesition>.rel-sug-box>.rel-sug-title {
+    font-size: 24px;
+    font-weight: normal;
+
+    float: left;
+
+    line-height: 30px;
+    border-left: solid 3px #00b5e2;
+    padding-left: 7px;
+}
+
+.related-suggesition>.rel-sug-box>.more {
+    font-size: 16px;
+    text-decoration: none;
+    color: #909090;
+    text-align: right;
+    line-height: 30px;
+
+    float: right;
+}
+
+/* 推荐产品列表块样式 */
+.sug-product-list {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 370px;
+}
+
+/* 推荐产品样式 */
+.sug-product-list>div {
+    height: 370px;
+    width: 285px;
+    background: #ffffff;
+
+    float: left;
+    position: relative;
+    box-sizing: border-box;
+    padding: 30px 0px;
+    top: 0px;
+
+    transition: all 0.2s linear 0s;
+}
+
+/* 推荐产品块被鼠标滑过时的样式 */
+.sug-product-list>div:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* 推荐产品名称和介绍 */
+.sug-product-list>div>p {
+    text-align: center;
+}
+
+/* 推荐的产品名称 */
+.sug-product-list>div>p:first-of-type {
+    font-size: 18px;
+    line-height: 25px;
+    font-weight: bold;
+}
+
+/* 推荐的产品介绍 */
+.sug-product-list>div>p:last-of-type {
+    font-size: 14px;
+    color: #707070;
+
+    margin-top: 5px;
+}
+
+/* 推荐的产品图片 */
+.sug-product-list>div>img {
+    display: block;
+    margin: 20px auto 0px;
+
+}
+
+/* 购买推荐的产品链接按钮样式 */
+.sug-product-list>div>div {
+    display: flex;
+    justify-content: space-around;
+}
+
+.sug-product-list>div>div>a {
+    display: inline-block;
+    text-align: center;
+    font-size: 14px;
+    color: white;
+    background-color: #e5004f;
+    text-decoration: none;
+    border-radius: 5px;
+
+    margin-top: 30px;
+    padding: 6px 20px;
+}
+
+/* 推荐产品的角标 */
+.sug-product-list>div>span {
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    font-size: 13px;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+
+    right: 20px;
+    top: 84px;
+    position: absolute;
+}
+
+/* 角标的颜色 */
+.sug-product-list .one>span {
+    background-color: #f08b39;
+}
+
+.sug-product-list .two>span {
+    background-color: #e5004f;
+}
+
+.sug-product-list .three>span, .sug-product-list .four>span {
+    background-color: #0071cd;
+}
+
+/* 购买方式块样式 */
+.ways-to-purchase {
+    margin-top: 15px;
+    width: 100%;
+    height: 480px;
+    /* background-color: #363636; */
+    background: url(../images/index-flagship.jpg);
+
+    position: relative;
+}
+
+/* 华为商店样式 */
+.to-huawei-store {
+    left: 240px;
+    top: 195px;
+
+    position: absolute;
+}
+
+/* 点击进入华为商店按钮样式 */
+.to-huawei-store>.go-to-button {
+    margin: 30px auto 0px;
+
+    height: 43px;
+    width: 175px;
+    background: url(../images/btn-pink.png);
+}
+
+/* 链接样式 */
+.go-to-button>a {
+    display: block;
+    line-height: 43px;
+    text-align: center;
+
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+/* 其他购买平台区域样式 */
+.more-store {
+    height: 400px;
+    width: 300px;
+
+    position: absolute;
+    right: 10px;
+    top: 0px;
+}
+
+/* 其他购买平台介绍字体样式 */
+.more-store>p {
+    color: white;
+    margin: 50px 0px 0px 20px;
+}
+
+.more-store>p:first-of-type {
+    font-size: 20px;
+}
+
+.more-store>p:last-of-type {
+    margin-top: 15px;
+    margin-bottom: 45px;
+    font-size: 14px;
+}
+
+/* 其他购买平台图标样式 */
+.store-icons>img {
+    margin: 0px 40px 40px 0px;
+
+    border-radius: 50%;
+    box-shadow: 3px 4px 2px rgba(0, 150, 230, 0.8);
+}
+
+/* 最新消息标题盒子样式 */
+.news>.news-box {
+    height: 30px;
+    margin: 30px 0px 20px 0px;
+}
+
+/* 最新消息标题样式 */
+.news>.news-box>.news-title {
+    font-size: 24px;
+    font-weight: normal;
+
+    float: left;
+
+    line-height: 30px;
+    border-left: solid 3px #00b5e2;
+    padding-left: 7px;
+}
+
+.news>.news-box>.more {
+    font-size: 16px;
+    text-decoration: none;
+    color: #909090;
+    text-align: right;
+    line-height: 30px;
+
+    float: right;
+}
+
+/* 新闻列表盒子样式 */
+.news-list {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* 每一项新闻的样式 */
+.news-list>div {
+    width: 380px;
+    height: 329px;
+
+    background-color: white;
+}
+
+/* 新闻中图片的盒子样式 */
+.news-list>div>div {
+    width: 380px;
+    height: 270px;
+
+    overflow: hidden;
+}
+
+/* 新闻中图片本身的样式 */
+.news-list>div>div>img {
+    display: block;
+    
+    transition: all 0.5s ease 0s;
+}
+
+/* 新闻中图片被鼠标滑过时的样式 */
+.news-list>div>div>img:hover {
+    transform: scale(1.1);
+}
+
+/* 新闻中文本的样式 */
+.news-list>div>p {
+    height: 40px;
+    font-size: 16px;
+    color: black;
+    line-height: 40px;
+    
+    padding: 0px 10px 0px 10px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* 新闻的时间(文本)样式 */
+.news-list>div>span {
+    font-size: 14px;
+    color: #909090;
+    
+    padding: 0px 10px 0px 10px;
+}
+
+/* 客服和服务中心区域样式 */
+.services {
+    margin-top: 30px;
+    position: relative;
+
+    width: 100%;
+}
+
+/* 客服与服务中心文本样式 */
+.services>p {
+    width: 100%;
+    height: 17px;
+    background: url(../images/skew-mask.png) 0px -60px;
+
+    position: absolute;
+    top: 0px;
+}
+
+/* 客服图片盒子 */
+.services>div {
+    height: 413px;
+    width: 600px;
+
+    float: left;
+}
+
+/* 回到顶部按钮公共样式 */
+.go-to-top {
+    display: block;
+    height: 46px;
+    width: 46px;
+    background-color: #00b6e1;
+}
+
+/* 回到顶部按钮样式内部箭头样式 */
+.go-to-top>i {
+    display: block;
+    height: 15px;
+    width: 15px;
+    border-left: solid 1px white;
+    border-top: solid 1px white;
+    margin: 40% 35%;
+    transform: rotateZ(42deg);
+}
+
+/* 固定的回到顶部按钮样式 */
+#go-to-top-red {
+    position: absolute;
+    right: 0px;
+    transform: translateX(100%);
+    bottom: 46px;
+}
+
+/* 客服与服务中心图片样式 */
+.services>div:first-of-type {
+    background: url(../images/index-block1.jpg);
+}
+
+.services>div:last-of-type {
+    background: url(../images/index-block2.jpg);
+}
+
+/* 客服与服务中心按钮链接样式 */
+.services>div>p, .services>div>a {
+    color: white;
+    text-align: center;
+}
+
+.services>div>p:first-of-type {
+    margin-top: 130px;
+    font-size: 30px;
+}
+
+.services>div>p:last-of-type {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.services>div>a {
+    display: block;
+    height: 43px;
+    width: 175px;
+    font-size: 16px;
+    line-height: 43px;
+    text-decoration: none;
+    background: url(../images/btn-pink.png);
+
+    margin: 20px auto 0px;
+}
+
+/* =========================网页内容结束======================== */

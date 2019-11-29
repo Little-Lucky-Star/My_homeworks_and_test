@@ -1,0 +1,26 @@
+@charset "utf-8";
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+div.con {
+    width: 788px;
+    margin: 100px auto;
+    position: relative;
+}
+
+.square, .chain {
+    position: absolute;
+}
+
+.square {
+    left: 0px;
+    top: 0px;
+}
+
+.chain {
+    right: 0px;
+    top: 0px;
+}

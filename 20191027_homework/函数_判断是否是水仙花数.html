@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div style="display: flex; justify-content: center; margin-top: 100px;">
+        <input type="text" placeholder="输入一个三位数" id="input">
+        <button id="button">检测是否为水仙花数:</button>
+        <input type="text" readonly id="output">
+    </div>
+</body>
+<script>
+    var btn = document.getElementById("button");
+    var output = document.getElementById("output");
+    
+    // var a = parseInt(num / 100);
+    // var b = parseInt(num % 100 / 10);
+    // var c = num % 10;
+    
+    btn.onclick = function () {
+        var num = document.getElementById("input").value;
+        result = eval(num.toString().split('').map(function (value) { return Math.pow(value, 3); }).join('+'));
+        if (num == result) {
+            output.value = "true";
+        } else {
+            output.value = "false";
+        }
+    }
+</script>
+</html>

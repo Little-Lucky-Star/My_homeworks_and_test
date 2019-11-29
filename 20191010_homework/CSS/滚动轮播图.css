@@ -1,0 +1,98 @@
+@charset "utf-8";
+
+* {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+.clearfix::after {
+    display: block;
+    height: 0px;
+    clear: both;
+    content: "";
+    visibility: hidden;
+}
+
+.view {
+    width: 750px;
+    height: 281px;
+
+    margin: 100px auto;
+    border: 3px dashed orange ;
+
+    overflow: hidden;
+
+    position: relative;
+}
+
+.con {
+    width: 9999px;
+}
+
+.con>img {
+    float: left;
+}
+
+.switch {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+
+    /* transform属性可以对元素进行旋转倾斜等操作 */
+    transform: translateY(-50%);;
+}
+
+.switch>p {
+    display: inline-block;
+    color: white;
+    font-size: 30px;
+    line-height: 40px;
+    background-color: black;
+    opacity: 0.2;
+}
+
+.switch>.lt {
+    padding: 0px 16px 0px 6px;
+    border-radius: 0px 50% 50% 0px;
+    cursor: pointer;
+}
+
+.switch>.gt {
+    float: right;
+    padding: 0px 6px 0px 16px;
+    border-radius: 50% 0px  0px 50%;
+    cursor: pointer;
+}
+
+.view:hover .switch>p {
+    opacity: 1;
+}
+
+.switch>p:hover {
+    color: red;
+}
+
+.list {
+    padding: 0px 4px;
+    background-color: darkgray;
+    border-radius: 8px;
+
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.list>li {
+    float: left;
+    border: 4px solid white;
+    border-radius: 50%;
+    margin: 4px;
+
+    cursor: pointer;
+}
+
+li.on {
+    border: 4px solid red;
+}

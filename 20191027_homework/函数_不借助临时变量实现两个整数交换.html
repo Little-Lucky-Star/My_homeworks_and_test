@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+<script>
+    var a = Number(window.prompt("请输入第一个整数:"));
+    var b = Number(window.prompt("请输入第二个整数:"));
+
+    var result = new Array();
+
+    // 值传递,,,待定...
+    function swap(a, b) {
+        a += b;
+        b = a - b;
+        a -= b;
+        result.push(a);
+        result.push(b);
+        return result;
+    }
+
+    swap(a, b);
+
+    window.alert("a = " + result[0] + ", b = " + result[1]);
+
+</script>
+
+</html>

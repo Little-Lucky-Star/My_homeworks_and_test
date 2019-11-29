@@ -1,0 +1,161 @@
+@charset "utf-8";
+
+* {
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+.clearfix::after {
+    display: block;
+    height: 0;
+    clear: both;
+    content: "";
+    visibility: hidden;
+}
+
+.header {
+    height: 50px;
+    background-color: #4c4c4c;
+    width: 100%;
+    position: fixed;
+    top: 0px;
+}
+
+.logo {
+    float: left;
+    margin-left: 100px;
+}
+
+h1>a {
+    display: block;
+    height: 50px;
+    width: 150px;
+
+    /* 首行缩进, 设置负值会把内容缩进到左侧 */
+    text-indent: -9999px;
+    overflow: hidden;
+    background: url(../images/6c7ccc5c6ac5bdbaff0d8dd779b1eb8a_origin.png) no-repeat center/150px;
+}
+
+.header>ul {
+    float: left;
+    margin-left: 100px;
+}
+
+.header li {
+    float: left;
+    margin-left: 50px;
+    color: white;
+    line-height: 50px;
+}
+
+.login-register {
+    float: right;
+    margin-right: 100px;
+}
+
+div.header a {
+    color: white;
+    line-height: 50px;
+}
+
+div.header a:first-of-type~a {
+    margin-left: 50px;
+}
+
+.header>ul>li:last-of-type {
+    font-size: 20px;
+    font-weight: 100;;
+}
+
+.header>ul>li:nth-of-type(2) {
+    position: relative;
+}
+
+.header li>img {
+    height: 15px;
+    position: absolute;
+    top: 4px;
+    left: 30px;
+}
+
+.contents {
+    margin: 80px auto;
+}
+
+body {
+    background-color: #e8eae9;
+}
+
+.contents>img:first-of-type {
+    display: block;
+    margin: 30px auto;
+    height: 100px;
+}
+
+.study {
+    padding: 0px 100px;
+    width: 1000px;
+    margin: 15px auto;
+}
+
+.study>li:first-of-type {
+    float: left;
+}
+
+.study>li:nth-of-type(2) {
+    float: left;
+    margin: 0px 200px;
+}
+
+.study>li:nth-of-type(3) {
+    float: right;
+}
+
+
+.study img {
+    height: 200px;
+    margin: 15px auto;
+    border-radius: 50%;
+}
+
+.study p {
+    text-align: center;
+    font-size: 14px;
+}
+
+.contents>p {
+    text-align: center;
+    color: #808080;
+}
+
+.buttons {
+    width: 280px;
+    margin: 40px auto;
+}
+
+.buttons>a {
+    display: block;
+    color: white;
+    border-radius: 4px 4px;
+    font-size: 14px;
+    height: 20px;
+    
+    
+    width: 100px;
+    line-height: 20px;
+    
+    text-align: center;
+    padding: 6px 10px;
+    background-color: orange;
+}
+
+.buttons>a:first-of-type {
+    float: left;
+}
+
+.buttons>a:first-of-type~a {
+    float: right;
+}

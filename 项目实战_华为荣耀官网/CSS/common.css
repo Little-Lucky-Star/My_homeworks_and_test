@@ -1,0 +1,503 @@
+@charset "utf-8";
+
+/* ===============默认样式清除代码=============== */
+
+/* 全局重置默认样式 */
+* {
+    margin: 0px;
+    padding: 0px;
+
+    list-style: none;
+    font-family: "lanting", Helvetica, "Microsoft Yahei",Arial, STHeiti, "Microsoft JhengHei", "微軟正黑體", sans-serif;
+}
+
+/* 清除浮动 */
+.clearfix::after {
+    display: block;
+    height: 0px;
+    content: "";
+    clear: both;
+    visibility: hidden;
+}
+
+/* go-to-top按钮样式(view) */
+/* .view-go-to-top {
+    height: 46px;
+    width: 46px;
+    background-color: #00b6e1;
+
+    margin-left: 600px;
+    left: 50%;
+    bottom: 0px;
+    position: fixed;
+} */
+/* ===============清除代码结束=============== */
+
+
+/* =============回到顶部按钮部分============= */
+#view-go-to-top {
+    margin-left: 600px;
+    left: 50%;
+    bottom: 0px;
+    position: fixed;
+    display: none;
+}
+
+/* =============回到顶部按钮部分============= */
+
+
+/* ===============网页头部开始=============== */
+
+/* 头部浮动框架 */
+.public-header {
+    height: 90px;
+    width: 100%;
+    background-color: #ffffff;
+
+    position: fixed;
+    top: 0px;
+
+    /* Debug: */
+    /* background-color: red; */
+
+    z-index: 10;
+}
+
+/* 头部框架中的顶部栏盒子,包含登录注册等信息 */
+.login-register {
+    height: 30px;
+    width: 100%;
+
+    position: absolute;
+    top: 0px;
+
+    background: url(../images/topbar-bg.gif);
+}
+
+.login-register-box {
+    width: 1200px;
+
+    margin: 0px auto;
+}
+
+/* 包含顶部栏中各种链接的列表,包含登录注册等 */
+.login-register-links {
+    float: right;
+}
+
+/* 列表项样式 */
+.login-register-links>li {
+    float: left;
+    margin: 0px 7px;
+}
+
+/* 登录图标所在项 */
+.login-register-links>li:nth-child(4) {
+    box-sizing: border-box;
+    padding: 6px 0px;
+}
+
+/* 登录图标本身样式 */
+/* .login-register-links>li>img {
+    box-shadow: 1px 1px 1px 1px black;
+} */
+
+.login-register-links>li:nth-of-type(3) {
+    margin-right: 49px;
+}
+
+.login-register-links>li:nth-of-type(3)~li {
+    margin: 0px 2px;
+}
+
+/* 链接本身样式 */
+.login-register-links>li>a {
+    color: white;
+
+    text-decoration: none;
+    font-size: 15px;
+
+    line-height: 30px;
+}
+
+/* 头部导航列表 */
+.navigation {
+    height: 60px;
+    width: 100%;
+
+    position: absolute;
+    bottom: 0px;
+
+    background-color: white;
+    box-shadow: -2px 1px 6px 0px rgba(128, 128, 128, 0.534);
+}
+
+/* 头部导航列表盒子样式 */
+.navigation-box {
+    width: 1200px;
+    height: 100%;
+
+    position: relative;
+    margin: 0px auto;
+}
+
+/* logo盒子样式 */
+.logo-box {
+    height: 100%;
+
+    float: left;
+    position: relative;
+}
+
+/* 华为荣耀logo */
+.logo {
+    display: block;
+    height: 22px;
+    width: 106px;
+
+    position: relative;
+
+    top: 50%;
+    transform: translateY(-50%);
+
+    text-indent: -9999px;
+    overflow: hidden;
+
+    background: url(../images/HONOR_Logo2.jpg) no-repeat;
+}
+
+/* 导航列表块 */
+.navigation-links {
+    float: left;
+    margin-left: 40px;
+}
+
+/* 导航列表样式 */
+.navigation-links>li {
+    float: left;
+    box-sizing: border-box;
+
+}
+
+/* 列表内容(链接)样式 */
+.navigation-links>li>a {
+    display: block;
+    height: 60px;
+    font-size: 15px;
+    text-decoration: none;
+    color: #909090;
+    line-height: 60px;
+
+    box-sizing: border-box;
+
+    margin: 0px 15px;
+    padding: 0px 15px;
+}
+
+/* 当光标经过导航列表时显示蓝色下边框 */
+.navigation-links>li>a:hover {
+    border-bottom: solid 3px #19bae5;
+}
+
+/* #ERROR */
+/* 光标经过"产品"导航字样时显示产品下拉列表" */
+/* .navigation-links>li:first-of-type:hover .product-list {
+    display: block;
+} */
+
+/* 搜索框所在盒子 */
+.search-box {
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* 搜索框本身样式 */
+.search {
+    height: 32px;
+    width: 240px;
+
+    box-sizing: border-box;
+    padding: 0px 40px 0px 13px;
+
+    border: 1px solid #959595;
+    border-radius: 50px;
+    outline: none;
+}
+
+/* #ERROR (已解决:权值较低, 被下面的设置覆盖) */
+/* 搜索框获取到焦点时隐藏快捷搜索按钮 */
+input.search:focus ~a[class|=button] {
+    display: none !important;
+
+/* Debug */
+/* .search ~a {
+    background: #017acd !important;
+} */
+
+/* .search-box:focus a{
+
+    background-color: red !important;
+} */
+
+}
+
+/* 搜索框内元素相同样式 */
+.search-box>input:nth-of-type(1)~a {
+    display: block;
+
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* 搜索框内放大镜图标样式 */
+.search-icon {
+    height: 16px;
+    width: 16px;
+    background: url(../images/search.png);
+
+    right: 13px;
+}
+
+/* 搜索框内快捷按钮通用样式 */
+.search-box>a[class|=button] {
+    display: inline-block;
+    font-size: 12px;
+    color: #707070;
+    text-decoration: none;
+    padding: 2px 4px;
+
+    background-color: #eeeeee;
+
+    border-radius: 4px;
+}
+
+/* 快捷搜索按钮单独样式 */
+.search-box>.button-1 {
+    right: 95px;
+}
+
+.search-box>.button-2 {
+    right: 36px;
+}
+
+/* 鼠标经过快捷搜索按钮样式 */
+.search-box>a[class|=button]:hover {
+    color: white;
+    background-color: #19bae5;
+}
+
+/* 产品下拉信息列表样式 */
+.product-list {
+    /* height: 276px; */
+    width: auto;
+    margin-top: 90px;
+
+    background-image: linear-gradient(to bottom, #017acd 1%, #00b6e1 100%);
+
+    /* 溢出隐藏, 等待光标经过"产品"导航字样时显示 */
+    overflow: hidden;
+    height: 0px;
+
+    transition: all 0.2s ease 0s;
+}
+
+
+/* 列表内容块盒子样式 */
+.product-list-box {
+    height: 100%;
+    width: 1200px;
+
+    margin: 0px auto;
+}
+
+/* 列表内容块样式 */
+.product-list-box>dl {
+    width: 200px;
+
+    float: left;
+    margin: 35px 0px;
+
+    position: relative;
+}
+
+/* 列表内容块下的元素通用样式 */
+.product-list-box>dl>* {
+    color: white;
+}
+
+/* 列表内容标题样式 */
+.product-list-box>dl>dt {
+    font-size: 18px;
+}
+
+/* 列表内容标题前三角标 */
+.product-list-box>dl>dt::before {
+    display: block;
+    height: 10px;
+    width: 10px;
+    content: "";
+
+    border: 5px solid transparent;
+    border-left: 5px solid white;
+    box-sizing: border-box;
+
+    position: absolute;
+    transform: translate(-100%, 50%)
+}
+
+/* 列表内容项样式 */
+.product-list-box>dl>dd {
+    font-size: 14px;
+    margin: 20px 0px;
+}
+
+/* ===============网页头部结束=============== */
+
+
+/* ===============网页脚部开始=============== */
+
+.public-footer {
+    width: 100%;
+    height: 290px;
+    background-image: linear-gradient(to bottom, #017acd 1%, #00b6e1 100%);
+}
+
+.footer-con {
+    width: 1200px;
+    padding: 40px 0px;
+
+    margin: 0px auto;
+}
+
+.footer-con>dl {
+
+    margin-right: 50px;
+    float: left;
+    color: white;
+}
+
+.footer-con>dl>dt {
+    font-size: 18px;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+.footer-con>dl>dd {
+    font-size: 14px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.special-1 {
+    margin-bottom: 30px !important;
+}
+
+.contact-us {
+    font-size: 14px;
+    width: 670px;
+    height: 180px;
+    color: white;
+
+    box-sizing: border-box;
+    padding-left: 50px;
+    float: right;
+    border-left: solid 1px #80c5e9;
+}
+
+.contact-us>div {
+    float: left;
+}
+.contact-us * {
+    margin-bottom: 10px;
+}
+
+.contact-us a {
+    display: block;
+    width: 130px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    border: solid 1px white;
+    border-radius: 5px;
+    
+}
+
+.contact-us>p {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.contact-us i {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0px 4px 0px 0px !important;
+}
+
+.contact-us .icon-1 {
+    height: 24px;
+    width: 21px;
+    background: url(../images/icon-custom.png);
+}
+
+.contact-us .icon-2 {
+    height: 18px;
+    width: 23px;
+    background: url(../images/ico-email.png);
+}
+.call-us>p.p-num{
+    font-size: 18px ;
+}
+
+.call-us span {
+    font-size: 14px;
+}
+
+.services-mail {
+    margin-left: 40px;
+}
+
+.follow-us {
+    width: 160px;
+    margin-left: 30px;
+}
+
+.follow-us>img {
+    display: block;
+    box-sizing: border-box;
+    width: 30px;
+    border: solid 1px white;
+    border-radius: 50px;
+
+    float: left;
+    margin: 0px 10px 10px 0px !important;
+}
+
+.copyright {
+    height: 100px;
+    width: 1200px;
+    box-sizing: border-box;
+    background-color: #f6f6f6;
+
+    margin: 0px auto;
+    padding: 20px 0px 20px 0px;
+
+    font-size: 14px;
+    color: #707070;
+}
+
+.copyright>p {
+    padding: 5px 0px;
+}
+
+.copyright .icon-1 {
+    display: inline-block;
+    vertical-align: middle;
+    height: 20px;
+    width: 20px;
+    background: url(../images/ghs.png);
+}

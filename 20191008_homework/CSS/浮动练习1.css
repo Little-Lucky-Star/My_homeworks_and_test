@@ -1,0 +1,46 @@
+@charset "utf-8";
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.large {
+    width: 924px;
+    height: 600px;
+    margin: auto;
+    /* background-color: aqua; */
+}
+
+.large>div {
+    float: left;
+    width: 300px;
+    height: 600px;
+    margin: 0px 4px;
+}
+
+.little {
+    float: left;
+    margin: 4px 0px;
+}
+
+
+.normal-2>.little {
+    height: 192px;
+    width: 300px;
+    background-color: rgb(154,255,84);
+}
+
+.normal-3>.little, .normal-1>.little {
+    height: 292px;
+    width: 300px;
+    background-color: rgb(154,255,0);
+}
+
+.normal-3>.little {
+    background-color: rgb(154,255,172);
+}
+
+normal-1>.little, normal-3>.little {
+    margin: 4px;
+}

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        var year = parseInt(window.prompt("请输入工作年限"));
+        var salary = parseInt(window.prompt("请输入工资"));
+        var yearEndReward = year < 1 ? (salary < 8000 ? salary * 1 : salary * 1.2 ) : (
+            year < 2 ? (salary < 10000 ? salary * 1.5 : salary * 1.7) : (
+                salary < 13000 ? salary * 2.3 : salary * 3)
+            );
+
+        window.alert(yearEndReward.toFixed());
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

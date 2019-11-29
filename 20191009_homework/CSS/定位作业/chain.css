@@ -1,0 +1,40 @@
+@charset "utf-8";
+
+.chain {
+    height: 344px;
+    width: 344px;
+}
+
+.chain>div {
+    height: 100px;
+    width: 100px;
+    background-color: aqua;
+    border: solid red 1px;
+    position: absolute;
+}
+
+.chain>.little-square-1 {
+    left: 22px;
+    top: 22px;
+}
+
+.chain>.little-square-2 {
+    left: 72px;
+    top: 72px;
+}
+
+.chain>.little-square-3 {
+    left: 122px;
+    top: 122px;
+    background-color: yellow;
+}
+
+.chain>.little-square-4 {
+    left: 172px;
+    top: 172px;
+}
+
+.chain>.little-square-5 {
+    left: 222px;
+    top: 222px;
+}

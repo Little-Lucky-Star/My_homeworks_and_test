@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">点击输出helloWorld</button>
+    <div id="print"></div>
+</body>
+<script>
+    var btn = document.getElementById("btn");
+    var print = document.getElementById("print");
+
+    // 定义函数, 页面输出"hello world";
+    function fn(outString) {
+        outString.innerText = "hello world!";
+    }
+
+    // 当点击按钮时执行 fn 自定义函数
+    btn.onclick = function () {
+        fn(print);
+    };
+</script>
+</html>

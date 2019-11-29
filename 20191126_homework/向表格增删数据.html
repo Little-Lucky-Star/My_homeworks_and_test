@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div.con {
+            margin: 100px auto;
+            width: 200px;
+        }
+
+        th,
+        td {
+            border: 1px solid;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="con">
+        <fieldset class="data-input">
+            <legend>信息录入部分</legend>
+            姓名:<input type="text" id="name">
+            年龄:<input type="text" id="age">
+            性别:<input type="radio" id="man" name="gender" value="" checked>男 <input type="radio" id="woman"
+                name="gender">女
+            <button id="inputBtn">点击添加</button>
+        </fieldset>
+        <fieldset class="data-list">
+            <legend>信息表格部分</legend>
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <th>姓名</th>
+                        <th>年龄</th>
+                        <th>性别</th>
+                        <th>操作</th>
+                        <th>全选<input type="checkbox" id="select-all"><button id="del-all-select">删除所选</button></th>
+                    </tr>
+                </tbody>
+            </table>
+        </fieldset>
+    </div>
+</body>
+<script>
+
+    // 懒得优化了, 所有重复操作可以写为函数, 被操作的对象为空时可以不继续进行更改和删除操作, 节省资源
+    var input = document.getElementById("inputBtn");
+    var _name = document.getElementById("name");
+    var age = document.getElementById("age");
+    var gender = document.getElementsByName("gender");
+    var table = document.getElementsByClassName("table")
+
+    var selectAll = document.getElementById("select-all");
+    var delAllSelectBtn = document.getElementById("del-all-select");
+
+    console.log(_name);
+    console.log(age);
+    console.log(gender[0].nextSibling, "类型为:", typeof (gender[0].nextSibling.textContent))
+    console.log(selectAll);
+    console.log(delAllSelectBtn);
+
+    var checkArr = new Array();
+
+    function getGender() {
+        return gender[0].checked ? gender[0] : gender[1];
+    }
+
+    function detectAllSelect() {
+        var count = 0;
+        for (var i = 0; i < checkArr.length; i++) {
+            if (checkArr[i].checked) {
+                count++;
+            }
+        }
+        console.log("count = ", count, "length = ", checkArr.length);
+        if (count === checkArr.length) {
+            selectAll.checked = true;
+        } else {
+            selectAll.checked = false;
+        }
+    }
+
+    console.log(gender[0].checked);
+
+    input.onclick = function () {
+        var data = document.createElement("tr");
+
+        var dataName = document.createElement("td");
+        dataName.innerText = _name.value;
+        console.log(dataName);
+
+
+        var dataAge = document.createElement("td");
+        dataAge.innerText = age.value;
+        console.log(dataAge);
+
+        var dataGender = document.createElement("td");
+        dataGender.innerText = getGender().nextSibling.textContent;
+        console.log(dataGender);
+
+        var dataRemove = document.createElement("td");
+        var delBtn = document.createElement("button");
+        delBtn.innerText = "删除";
+        delBtn.setAttribute("id", "removeBtn");
+        delBtn.addEventListener("click", function () {
+            this.parentElement.parentElement.remove();
+        })
+        dataRemove.appendChild(delBtn);
+
+        var dataSelectBox = document.createElement("td");
+        var selectBox = document.createElement("input");
+        selectBox.setAttribute("type", "checkbox");
+        selectBox.addEventListener("click", function () {
+            detectAllSelect();
+        });
+        dataSelectBox.appendChild(selectBox);
+        checkArr.push(selectBox);
+
+        data.appendChild(dataName);
+        data.appendChild(dataAge);
+        data.appendChild(dataGender);
+        data.appendChild(dataRemove);
+        data.appendChild(dataSelectBox);
+        console.log(data);
+
+        table[0].firstElementChild.appendChild(data);
+    }
+
+    selectAll.onclick = function () {
+        console.log("点击了全选框, 当前状态为:", this.checked);
+        if (this.checked) {
+            for (var i = 0; i < checkArr.length; i++) {
+                checkArr[i].checked = true;
+            }
+        } else {
+            for (var i = 0; i < checkArr.length; i++) {
+                checkArr[i].checked = false;
+            }
+        }
+    }
+
+    delAllSelectBtn.onclick = function () {
+        console.log("删除所有选择的条目");
+        for (var i = 0; i < checkArr.length; i++) {
+            if (checkArr[i].checked) {
+                checkArr[i].parentElement.parentElement.remove();
+            }
+        }
+    }
+</script>
+
+</html>

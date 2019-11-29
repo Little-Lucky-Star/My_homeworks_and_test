@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>随机颜色盒子</title>
+    <style>
+        .con {
+
+            width: 500px;
+            margin: 100px auto;
+        }
+
+        .button {
+            margin: 0px auto;
+            display: block;
+        }
+
+        .box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 300px;
+            width: 300px;
+            border: dashed orange 3px;
+
+            margin: 0px auto;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="con">
+        <div class="box" id="box">
+            <h1 id="num"></h1>
+        </div>
+        <button class="button" id="button">点击随机改变数字和颜色</button>
+    </div>
+</body>
+
+<script>
+
+    // 获取文档中的id元素
+    var button = document.getElementById("button");
+    var box = document.getElementById("box");
+    var num = document.getElementById("num");
+
+    // 当button发生点击事件时
+    button.onclick = function() {
+
+        // 显示随机数字
+        num.innerText = Math.round(Math.random() * 50) + 50;
+
+        // 随机的背景颜色
+        var r = Math.fround(Math.random() * 255);
+        var g = Math.fround(Math.random() * 255);
+        var b = Math.fround(Math.random() * 255);
+
+        box.style.backgroundColor = "rgb(" + r + ',' + g + ',' + b + ')';
+    }
+</script>
+
+</html>

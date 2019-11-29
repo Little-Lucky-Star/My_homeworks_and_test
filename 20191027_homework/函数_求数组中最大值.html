@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>求数组中最大值</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // 由字符串转为数组
+    var arr = window.prompt("请输入一串数组, 例如:1 2 3(使用空格分离)").split(' ');
+    console.log("arr = ", arr, "arr typeof = ", typeof arr);
+    
+    // 定义一个求数组中最大值函数
+    function arrInMax(arr) {
+        var max = arr[0];
+        for (var i = 0; i < arr.length; i++) {
+            if (max < arr[i]) {
+                max = arr[i];
+            }
+        }
+        return max;
+    }
+
+    // 调用求奇偶函数
+    window.alert("这个数是:" + arrInMax(arr));
+</script>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div style="display: flex; justify-content: center; margin-top: 100px;">
+        <input type="text" placeholder="输入男生月份" id="input-boy">
+        <input type="text" placeholder="输入女生月份" id="input-girl">
+        <button id="button">点击进行缘分检测:</button>
+        <input type="text" readonly id="output">
+    </div>
+</body>
+<script>
+    var btn = document.getElementById("button");
+    var output = document.getElementById("output");
+
+    var boyMonth = document.getElementById("input-boy");
+    var girlMonth = document.getElementById("input-girl");
+
+    str = ["有情人终成眷属", "有情人不一定成为眷属", "有情人可以恋爱", "没有情, 可以当朋友", "不适合在一起, 可能会吵架"];
+    
+    btn.onclick = function () {
+        output.value = str[boyMonth.value % girlMonth.value];
+    }
+</script>
+</html>

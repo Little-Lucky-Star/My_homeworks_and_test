@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>求最大值</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var first = Number(window.prompt("请输入第一个数字"));
+    var second = Number(window.prompt("请输入第二个数字"));
+
+    // 定义一个求最大值函数
+    function max(a, b) {
+        return a > b ? a : b;
+    }
+
+    // 调用函数获得最大值
+    window.alert("最大值为:" + max(first, second));
+</script>
+</html>

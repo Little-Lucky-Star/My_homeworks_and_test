@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>判断奇偶</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var num = Number(window.prompt("请输入一个数字"));
+
+    // 定义一个求奇偶函数
+    function numberType(num) {
+        return num % 2 == 0 ? "偶数" : "奇数";
+    }
+
+    // 调用求奇偶函数
+    window.alert("这个数是:" + numberType(num));
+</script>
+</html>
